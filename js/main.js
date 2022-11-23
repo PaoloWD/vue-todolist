@@ -9,6 +9,12 @@ const app = createApp({
       },
     };
   },
+  computed: {
+    countPendingTask() {
+      return this.taskList.filter(this.inProgress).length;
+    },
+  },
+
   methods: {
     onSubmit() {
       this.taskList.push({
