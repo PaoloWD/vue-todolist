@@ -43,5 +43,9 @@ const app = createApp({
     clearInProgress() {
       this.taskList = this.taskList.filter(this.isCompleted);
     },
+
+    clearAll() {
+      this.taskList = [];
+    },
   },
 }).mount("#app");
