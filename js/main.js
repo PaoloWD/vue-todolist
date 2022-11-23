@@ -21,5 +21,21 @@ const app = createApp({
     deleteTask(index) {
       this.taskList.splice(index, 1);
     },
+
+    inProgress(a) {
+      return !this.isCompleted(a);
+    },
+
+    isCompleted(a) {
+      return a.boolean;
+    },
+
+    clearCompleted() {
+      this.taskList = this.taskList.filter(this.inProgress);
+    },
+
+    clearInProgress() {
+      this.taskList = this.taskList.filter(this.isCompleted);
+    },
   },
 }).mount("#app");
