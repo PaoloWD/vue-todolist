@@ -32,10 +32,7 @@
               class="bg-form justify-content-center width d-flex align-items-center"
               @click="task.boolean=!task.boolean"
             >
-              <div
-                v-if="task.boolean===true"
-                :class="'text-decoration-line-through'"
-              >
+              <div v-if="task.boolean===true" :class="'line-through'">
                 {{task.text}}
               </div>
               <div v-else>{{task.text}}</div>
