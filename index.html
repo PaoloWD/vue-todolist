@@ -32,9 +32,13 @@
               class="bg-form justify-content-center width d-flex align-items-center"
               @click="task.boolean=!task.boolean"
             >
-              <div v-if="task.boolean===true" :class="'text-danger'">
+              <div
+                v-if="task.boolean===true"
+                :class="'text-decoration-line-through'"
+              >
                 {{task.text}}
               </div>
+              <div v-else>{{task.text}}</div>
             </div>
             <button class="btn btn-danger" @click="deleteTask(i)">X</button>
           </div>
